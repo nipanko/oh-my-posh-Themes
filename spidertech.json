@@ -1,0 +1,101 @@
+{
+	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+	"final_space": true,
+	"version": 2,
+	"blocks": [
+		{
+			"type": "prompt",
+			"alignment": "left",
+			"newline": true,
+			"segments": [
+				{
+					"foreground": "#960000",
+					"properties": {
+						"alpine": "",
+						"arch": "",
+						"centos": "",
+						"debian": "",
+						"elementary": "",
+						"fedora": "",
+						"gentoo": "",
+						"linux": "",
+						"macos": " ",
+						"manjaro": "",
+						"mint": "",
+						"opensuse": "",
+						"raspbian": "",
+						"ubuntu": " ",
+						"windows": " ",
+						"wsl": ""
+					},
+					"style": "diamond",
+					"template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}}",
+					"type": "os"
+          
+				},
+        {
+          "background": "transparent",
+          "foreground": "yellow",
+          "style": "diamond",
+          "template": "⚡",
+          "type": "sysinfo"
+        },
+        {
+          "background": "white",
+          "foreground": "red",
+          "leading_diamond": "\ue0b2",
+          "properties": {
+            "style": "roundrock",
+            "threshold": 0
+          },
+          "style": "diamond",
+          "template": "RAM: {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB \ue266 ",
+          "trailing_diamond": "",
+          "type": "sysinfo"
+        },
+        {
+          "background": "transparent",
+          "foreground": "red",
+          "style": "diamond",
+          "template": "🕸️",
+          "type": "sysinfo"
+        },
+        {
+          "background": "#f33610",
+          "foreground": "#ffffff",
+          "leading_diamond": "⟪\ue0b2",
+          "properties": {
+            "style": "roundrock",
+            "threshold": 0
+          },
+          "style": "diamond",
+          "template": " {{ .FormattedMs }} ",
+          "trailing_diamond": "\ue0b0⟫ ",
+          "type": "executiontime"
+        }
+			] 
+      
+		},
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "red",
+          "properties": {
+            "folder_icon": "\uf07b",
+            "folder_separator_template": "<wh> ❯ </>",
+            "home_icon": "\ueb06",
+            "style": "agnoster"
+          },
+          "style": "plain",
+          "template": "<p:white> \u2514◉ </><#f5f3bb>[[</> {{.Path}} <#f5f3bb>]]</><#FF0000>➢</>",
+          "type": "path"
+        }
+      ]
+    }
+	]
+}
+
